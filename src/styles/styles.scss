@@ -11,7 +11,7 @@
   
   body {
     font-family: sans-serif;
-    background: #102132
+    background: #102132;
   }
   
   main {
@@ -28,7 +28,9 @@
   
   h2 {
     margin-bottom: 1rem;
-    color: white
+    color: white;
+    letter-spacing: 0.5rem;
+    font-size: 2rem ;
   }
   
   section {
@@ -39,8 +41,11 @@
   }
   
   .contenedor-jugadores {
+    display: flex;
+    flex-direction: row;
     overflow: auto;
     padding-bottom: 2rem;
+    flex-wrap: wrap;
   }
   
   section>div:not(.cancha):not(.contenedor-jugadores) {
@@ -81,6 +86,7 @@
     border-radius: 0.25rem;
     box-shadow: 0 2px 4px 2px rgba(#000, 0.05);
     border: 1px solid #104266;
+    width: 20%;
   
     h3 {
       margin-bottom: var(--spacing);
@@ -120,40 +126,46 @@
   }
   
   //----- Titular -----//
-  .titular,
-  .suplente {
+  .titular {
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: .5s;
+    
   
     img {
       margin-bottom: 0;
+      width: 20%;
+      height: 20%
     }
   
     div {
-      position: relative;
+      //position: relative;
+      position: absolute;
     }
   
     p {
       color: #fff;
       background-color: rgba(#000, 0.5);
-      padding: 0 1rem;
+      //padding: 0 1rem;
+      padding: 0px 3rem;
       line-height: 2;
       border-radius: 1rem;
       font-size: 0.9rem;
     }
   
     button {
-      $color: #E40320;
+      $color: #be1a30;
       justify-content: center;
       align-items: center;
       position: absolute;
       right: 0;
       top: 0;
       color: #fff;
-      width: 1.15rem;
-      height: 1.15rem;
+      // width: 1.15rem;
+      // height: 1.15rem;
+      width: 1.25rem;
+      height: 1.25rem;
       border-radius: 50%;
       background-color: $color;
       display: none;
@@ -171,6 +183,71 @@
     }
   
   }
+
+  //----- Suplentes -----//
+  .suplente {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .5s;
+    border: 1px solid #104266;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 90%;
+
+  
+    img {
+      margin-bottom: 0;
+      width: 80%;
+      height: 80%;
+    }
+  
+    div {
+      position: relative;
+      //position: absolute;
+    }
+  
+    p {
+      color: #fff;
+      background-color: rgba(#000, 0.5);
+      //padding: 0 1rem;
+      padding: 0px 1rem;
+      line-height: 2;
+      border-radius: 1rem;
+      font-size: 0.9rem;
+      margin-top: -10px;
+    }
+  
+    button {
+      $color: #be1a30;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: -20%;
+      top: 0%;
+      color: #fff;
+      // width: 1.15rem;
+      // height: 1.15rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background-color: $color;
+      display: none;
+  
+      &:hover {
+        background-color: darken($color, 5);
+      }
+  
+    }
+  
+    &:hover {
+        button {
+            display: flex;
+        }
+    }
+  
+  }
+  
   
   //----- Cancha de futbol -----//
   .cancha {
@@ -199,7 +276,7 @@
   
     .titular:first-child {
       left: 5%;
-      top: 50%;
+      top: 40%;
       transform: translateY(-25%);
     }
   
@@ -224,7 +301,7 @@
     }
   
     .titular:nth-child(6) {
-      left: 50%;
+      left: 60%;
       top: 30%;
       transform: translateX(-50%);
     }
@@ -251,8 +328,13 @@
     }
   
     .titular:nth-child(11) {
-      left: 80%;
-      top: 30%;
+      left: 70%;
+      top: 25%;
+    }
+
+    .titular:nth-child(12) {
+      left: 5%;
+      top: 10%;
     }
   
   }
