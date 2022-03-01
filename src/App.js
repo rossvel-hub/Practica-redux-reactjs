@@ -9,6 +9,7 @@ const App = () => {
   return (
     <Provider store={store}>
     <main>
+      <h1>EQUIPO SOCCER</h1>
       <Jugadores />
       <EquipoSeleccionado />
     </main>
